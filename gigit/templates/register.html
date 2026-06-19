@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff7d6, #ffe0f0);
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff1493;
+            font-size: 50px;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px #ff69b4;
+        }
+
+        /* Floating music notes */
+        .note {
+            position: absolute;
+            font-size: 35px;
+            color: #ff69b4;
+            animation: float 6s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.7; }
+            50% { transform: translateY(-40px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.7; }
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+            width: 320px;
+            border: 3px dashed #ff69b4;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 2px solid #ff69b4;
+            font-size: 16px;
+        }
+
+        /* Guitar pick style button */
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px 50px 40px 40px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            transition: 0.2s;
+            box-shadow: 0 4px #ff1493;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+            transform: scale(1.08);
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            background-color: #ffd700;
+            color: black;
+            border-radius: 50px 50px 40px 40px;
+            box-shadow: 0 4px #c9a200;
+        }
+
+        .back-btn:hover {
+            background-color: #ffcc00;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating music notes -->
+<div class="note" style="top: 10%; left: 5%;">🎵</div>
+<div class="note" style="top: 20%; right: 10%;">🎶</div>
+<div class="note" style="top: 70%; left: 15%;">🎼</div>
+<div class="note" style="top: 50%; right: 5%;">🎵</div>
+
+<h1>Create Your GiGiT Account 🎤</h1>
+
+<form method="POST" action="/register">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <input type="text" name="phone" placeholder="Phone Number" required>
+
+    <input type="password" name="password" placeholder="Password" required>
+
+    <select name="role" required>
+        <option value="" disabled selected>Select your role</option>
+        <option value="musician">Musician</option>
+        <option value="listener">Listener</option>
+    </select>
+
+    <button type="submit">Create Account</button>
+</form>
+
+<button class="back-btn" onclick="window.location.href='/login'">Back to Login</button>
+
+</body>
+</html>
